@@ -20,7 +20,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.markdown("""
                 Ils permettent entre autres de générer des ventes additionnelles ou de fidéliser un prospect. 
                 Dans cette app, nous nous pencherons sur une base de données fournie par TMDB et contenant près de 5000 films. 
-                Parmis les informations disponibles sur ces films, nous avons le titre du film, l'année de sortie, le casting, le réalisateur, 
+                Parmi les informations disponibles sur ces films, nous avons le titre du film, l'année de sortie, le casting, le réalisateur, 
                 la note moyenne du public...
                 
                 """)
