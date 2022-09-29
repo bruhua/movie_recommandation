@@ -1,0 +1,11 @@
+,genres,keywords,title,cast,director
+0,"['action', 'adventure', 'fantasy']","['cultureclash', 'future', 'spacewar']",Avatar,"['samworthington', 'zoesaldana', 'sigourneyweaver']",jamescameron
+1,"['adventure', 'fantasy', 'action']","['ocean', 'drugabuse', 'exoticisland']",Pirates of the Caribbean: At World's End,"['johnnydepp', 'orlandobloom', 'keiraknightley']",goreverbinski
+2,"['action', 'adventure', 'crime']","['spy', 'basedonnovel', 'secretagent']",Spectre,"['danielcraig', 'christophwaltz', 'léaseydoux']",sammendes
+3,"['action', 'crime', 'drama']","['dccomics', 'crimefighter', 'terrorist']",The Dark Knight Rises,"['christianbale', 'michaelcaine', 'garyoldman']",christophernolan
+4,"['action', 'adventure', 'sciencefiction']","['basedonnovel', 'mars', 'medallion']",John Carter,"['taylorkitsch', 'lynncollins', 'samanthamorton']",andrewstanton
+5,"['fantasy', 'action', 'adventure']","['dualidentity', 'amnesia', 'sandstorm']",Spider-Man 3,"['tobeymaguire', 'kirstendunst', 'jamesfranco']",samraimi
+6,"['animation', 'family']","['hostage', 'magic', 'horse']",Tangled,"['zacharylevi', 'mandymoore', 'donnamurphy']",byronhoward
+7,"['action', 'adventure', 'sciencefiction']","['marvelcomic', 'sequel', 'superhero']",Avengers: Age of Ultron,"['robertdowneyjr.', 'chrishemsworth', 'markruffalo']",josswhedon
+8,"['adventure', 'fantasy', 'family']","['witch', 'magic', 'broom']",Harry Potter and the Half-Blood Prince,"['danielradcliffe', 'rupertgrint', 'emmawatson']",davidyates
+9,"['action', 'adventure', 'fantasy']","['dccomics', 'vigilante', 'superhero']",Batman v Superman: Dawn of Justice,"['benaffleck', 'henrycavill', 'galgadot']",zacksnyder
