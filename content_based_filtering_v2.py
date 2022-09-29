@@ -176,5 +176,5 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
                 proposés nous plaisent !""")
 
     st.markdown("""
-                   **Nous pouvons désormais combiner ce modèle ainsi que le [1er modèle basé sur le score des films](demographic_filtering) pour proposer toujours 
+                   **Nous pouvons désormais combiner ce modèle ainsi que le 1er modèle basé sur le score des films (demographic_filtering) pour proposer toujours 
                    davantage de films à nos usagers.**""")
