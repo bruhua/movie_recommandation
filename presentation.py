@@ -37,8 +37,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.markdown("""
                 Réussir à construire un système de recommandation efficace et pertinent. 
                 Pour cela, 3 modèles sont proposés : 
-                - le modèle Demographic Filtering """)
-     st.markdown("""
+                - le modèle Demographic Filtering 
                 - le modèle Content based Filtering
                 - le même modèle Content Based Filtering en version améliorée
                 """)
