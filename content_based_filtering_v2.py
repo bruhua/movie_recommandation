@@ -175,6 +175,4 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
                 Autre changement : les taux de recommandations sont plus élevés que précédemment. Il y a plus de chances pour que les films 
                 proposés nous plaisent !""")
 
-    st.markdown("""
-                   **Nous pouvons désormais combiner ce modèle ainsi que le 1er modèle basé sur le score des films pour proposer toujours 
-                   davantage de films à nos usagers.**""")
+
