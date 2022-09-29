@@ -44,7 +44,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     
     
     # Choix de la page
-    selection_page_presentation = st.sidebar.radio("", list(PAGES_page_presentation.keys()),key=range(0,3) )
+    selection_page_presentation = st.radio("", list(PAGES_page_presentation.keys()),key=range(0,3) )
     page_presentation = PAGES[selection_page_presentation]
     page_presentation.app(df_graph, final_film, df_exemple,df_overview,df_meta)
 
