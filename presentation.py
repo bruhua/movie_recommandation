@@ -6,6 +6,14 @@ import demographic_filtering
 import content_based_filtering
 import content_based_filtering_v2
 
+# Pages
+PAGES = {
+    "Présentation du sujet" : presentation,
+    "Demographic filtering": demographic_filtering,
+    "Content based filtering" : content_based_filtering,
+    "Content based filtering amélioré" :content_based_filtering_v2
+}
+
 
 def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.title("1 . Présentation du sujet")
@@ -29,6 +37,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
                 Réussir à construire un système de recommandation efficace et pertinent. 
                 Pour cela, 3 modèles sont proposés : 
                 - le modèle [Demographic Filtering](demographic_filtering)
+                - le modèle [Demographic Filtering](PAGES[demographic_filtering])
                 - [Content based Filtering](content_based_filtering)
                 - [Content Based Filtering v2](content_based_filtering_v2)
                 """)
