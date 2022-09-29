@@ -6,7 +6,7 @@ import content_based_filtering
 import content_based_filtering_v2
 import presentation
 
-def app(df, final_film):
+def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.title("2 . Demographic Filtering")
 
     st.subheader("Qu'est ce que c'est ? ")
@@ -25,9 +25,9 @@ def app(df, final_film):
 
 
     # FIlm les plus populaires (popularity)
-    x = df.sort_values(by='popularity', ascending=False).head(10)['title']
-    y = df.sort_values(by='popularity', ascending=False).head(10)['popularity']
-    fig = px.bar(df,
+    x = df_graph.sort_values(by='popularity', ascending=False).head(10)['title']
+    y = df_graph.sort_values(by='popularity', ascending=False).head(10)['popularity']
+    fig = px.bar(df_graph,
                  x=x
                  , y=y,
                  title="TOP 10 des films les plus populaires",
@@ -42,9 +42,9 @@ def app(df, final_film):
                     """)
 
     # FIlm avec les meilleures notes (vote_average)
-    x = df.sort_values(by='vote_average', ascending=False).head(10)['title']
-    y = df.sort_values(by='vote_average', ascending=False).head(10)['vote_average']
-    fig = px.bar(df,
+    x = df_graph.sort_values(by='vote_average', ascending=False).head(10)['title']
+    y = df_graph.sort_values(by='vote_average', ascending=False).head(10)['vote_average']
+    fig = px.bar(df_graph,
                  x=x
                  , y=y,
                  title="TOP 10 des films les mieux notés",
