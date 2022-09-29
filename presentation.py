@@ -41,3 +41,11 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
                 - le modèle Content based Filtering
                 - le même modèle Content Based Filtering en version améliorée
                 """)
+    
+    
+    # Choix de la page
+    selection = st.sidebar.radio("", list(PAGES.keys()),key=range(0,3) )
+    page = PAGES[selection]
+    page.app(df_graph, final_film, df_exemple,df_overview,df_meta)
+
+
