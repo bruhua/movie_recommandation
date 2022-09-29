@@ -177,4 +177,4 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
     st.write(get_recommandations("Jurassic World"))
 
-    st.markdown(""" **Le prochain modèle [Content based filtering amélioré](content_based_filtering_v2) va pousser plus loin cette démarche !** """)
+    st.markdown(""" **Le prochain modèle Content based filtering amélioré va pousser plus loin cette démarche !** """)
