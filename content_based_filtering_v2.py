@@ -18,7 +18,7 @@ import content_based_filtering
 import presentation
 
 
-def app(df, final_film):
+def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
     # PRESENTATION
     st.title("4 . Content Based Filtering amélioré")
@@ -37,18 +37,18 @@ def app(df, final_film):
      - les mots clés ("spy" ou "secret agent" pour un film James Bond) """)
 
 
-    st.write(df[['title', 'cast', 'director', 'keywords', 'genres']].head(3))
+    st.write(df_exemple[['title', 'cast', 'director', 'keywords', 'genres']].head(3))
 
 
     # DEMO
     st.subheader("Démonstration")
 
     count = CountVectorizer(stop_words='english')
-    count_matrix = count.fit_transform(df['metadonnees'])
+    count_matrix = count.fit_transform(df_meta['metadonnees'])
     cosine_sim2 = cosine_similarity(count_matrix, count_matrix)
     # Reset index of our main DataFrame and construct reverse mapping as before
-    df = df.reset_index()
-    indices = pd.Series(df.index, index=df['title'])
+    df_meta = df_meta.reset_index()
+    indices = pd.Series(df_meta.index, index=df_meta['title'])
 
     # Fonction de recommandations
     def get_recommandations2(title, cosine_sim=cosine_sim2):
@@ -63,7 +63,7 @@ def app(df, final_film):
         # Get the movie indices
         movie_indices = [i[0] for i in sim_scores]
         # Mise en forme d'un df avec nom du film et pct de recommandations
-        film_reco = pd.DataFrame(df['title'].iloc[movie_indices]).reset_index()
+        film_reco = pd.DataFrame(df_meta['title'].iloc[movie_indices]).reset_index()
         film_reco = film_reco.drop('index', axis=1)
         pct_reco = pd.DataFrame(sim_scores)
         pct_reco.rename(columns={0: 'index',
@@ -87,13 +87,13 @@ def app(df, final_film):
             else:
                 return ''
     # application de la fonction
-    df['title2'] = df['title'].apply(title_scrap)
+    df_meta['title2'] = df_meta['title'].apply(title_scrap)
 
     # Fonction qui chercher les affiches des films recommandés
     def find_image(film):
         url = 'https://www.themoviedb.org/search?language=en&query='
         prefix_url = 'https://www.themoviedb.org'
-        name = df.loc[df['title'] == film]['title2'].values
+        name = df_meta.loc[df_meta['title'] == film]['title2'].values
         final_url = url + name
         page_LC = urlopen(final_url[0])
         soup = BeautifulSoup(page_LC, 'html.parser')
@@ -111,7 +111,7 @@ def app(df, final_film):
         st.image(i,width=130  )
 
     # Interactivité : calcul des recommandations + affichages des affiches
-    listing_selectionnable3 = df.sort_values(by='popularity', ascending=False).head(100)['title']
+    listing_selectionnable3 = df_meta.sort_values(by='popularity', ascending=False).head(100)['title']
     film_selectionne = st.selectbox('Choisir un film parmi les 100 films les plus populaires', listing_selectionnable3)
 
 
