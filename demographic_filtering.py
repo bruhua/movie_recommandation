@@ -54,15 +54,15 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.plotly_chart(fig)
 
     st.markdown("""
-                ==> ... par contre les films les mieux notés peuvent être complètement inconnus ! (exemeple : un film avec une note moyenne de 10 et 3 votants)
+                ==> ... par contre les films les mieux notés peuvent être complètement inconnus ! (exemple : un film avec une note moyenne de 10 et 3 votants)
                     """)
 
 
-    st.subheader("La solution des systèmes de recommandations")
+    st.subheader("La solution mise en place par les systèmes de recommandations")
 
 
     st.markdown("""
-                Les systèmes de recommandations vont prendre alors en compte quelques indicateurs pour créer une note plus fiable : 
+                Les systèmes de recommandations vont alors prendre en compte plusieurs indicateurs pour créer une note plus fiable : 
                     """)
     st.markdown(""" - La note moyenne obtenue par un film (ex : "Le Parrain" a une note moyenne de 8.4 sur 10)""")
     st.markdown(""" - Le nombre de votants pour ce même film (toujours "Le Parrain", 5893 votants )""")
