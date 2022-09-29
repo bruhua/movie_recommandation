@@ -54,7 +54,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.plotly_chart(fig)
 
     st.markdown("""
-                ==> ... par contre les films les mieux notés peuvent être complètement inconnus !
+                ==> ... par contre les films les mieux notés peuvent être complètement inconnus ! (exemeple : un film avec une note moyenne de 10 et 3 votants)
                     """)
 
 
