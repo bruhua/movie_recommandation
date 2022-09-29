@@ -7,13 +7,6 @@ import content_based_filtering
 import content_based_filtering_v2
 import presentation
 
-# Pages
-PAGES_page_presentation = {
-    "Présentation du sujet" : presentation,
-    "Demographic filtering": demographic_filtering,
-    "Content based filtering" : content_based_filtering,
-    "Content based filtering amélioré" :content_based_filtering_v2
-}
 
 
 def app(df_graph, final_film, df_exemple,df_overview,df_meta):
@@ -43,9 +36,9 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
                 """)
     
     
-    # Choix de la page
-    selection_page_presentation = st.radio("", list(PAGES_page_presentation.keys()),key=range(0,3) )
-    page_presentation = PAGES[selection_page_presentation]
-    page_presentation.app(df_graph, final_film, df_exemple,df_overview,df_meta)
+    st.markdown(""" _Vous naviguez sur mobile ? Le menu se trouve au niveau de la flèche en haut en gauche_""") 
+    
+    
+
 
 
