@@ -10,9 +10,10 @@ import presentation
 
 
 def app(df_graph, final_film, df_exemple,df_overview,df_meta):
-    st.title("Système de recommandations de films")
+
         
-    st.title("1 . Présentation du sujet")
+    st.title("""Système de recommandations de films 
+             1 . Présentation du sujet""")
 
     st.subheader("Contexte")
 
