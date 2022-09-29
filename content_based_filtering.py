@@ -114,7 +114,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
             i.thumbnail(dimensions)
             st.image(i, width=130)
         except (IndexError,KeyError) :
-            print("le film {} n'a pas l'air d'avoir d'affiche disponible sur le site TMDB!")
+            st.write(f"le film {film} n'a pas l'air d'avoir d'affiche disponible sur le site TMDB!")
 
 
 
