@@ -7,7 +7,7 @@ import content_based_filtering
 import content_based_filtering_v2
 
 
-def app(df, final_film):
+def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.title("1 . Présentation du sujet")
 
     st.subheader("Contexte")
