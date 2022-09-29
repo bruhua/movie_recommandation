@@ -17,7 +17,7 @@ import presentation
 
 
 
-def app(df, final_film):
+def app(df_graph, final_film, df_exemple,df_overview,df_meta):
     st.title("3 . Content Based Filtering")
 
     st.subheader("Qu'est ce que c'est ? ")
@@ -31,7 +31,7 @@ def app(df, final_film):
     st.markdown("""
                 - le résumé de chaque film :  """)
 
-    st.write(df[['title','overview']].head())
+    st.write(df_overview[['title','overview']].head())
 
 
     st.markdown("""
@@ -41,7 +41,7 @@ def app(df, final_film):
     # Define a TF-IDF Vectorizer Object. Remove all english stop words such as 'the', 'a'
     tfidf = TfidfVectorizer(stop_words='english')
     # Replace NaN with an empty string
-    df2=df.copy()
+    df2=df_overview.copy()
     df2['overview'] = df2['overview'].fillna('')
     # Construct the required TF-IDF matrix by fitting and transforming the data
     tfidf_matrix = tfidf.fit_transform(df2['overview'])
@@ -90,13 +90,13 @@ def app(df, final_film):
                 return ''
 
         # application de la fonction
-    df['title2'] = df['title'].apply(title_scrap)
+    df_overview['title2'] = df_overview['title'].apply(title_scrap)
 
         # Fonction qui chercher les affiches des films recommandés
     def find_image(film):
         url = 'https://www.themoviedb.org/search?language=en&query='
         prefix_url = 'https://www.themoviedb.org'
-        name = df.loc[df['title'] == film]['title2'].values
+        name = df_overview.loc[df_overview['title'] == film]['title2'].values
         final_url = url + name
         page_LC = urlopen(final_url[0])
         soup = BeautifulSoup(page_LC, 'html.parser')
@@ -116,7 +116,7 @@ def app(df, final_film):
 
 
     # Interactivité : calcul des recommandations + affichages des affiches
-    listing_selectionnable2 = df2.sort_values(by='popularity', ascending=False).head(100)['title']
+    listing_selectionnable2 = df_overview.sort_values(by='popularity', ascending=False).head(100)['title']
     film_selectionne = st.selectbox('Choisir un film parmi les 100 films les plus populaires', listing_selectionnable2)
 
     if st.button('Montre-moi les recommandations !'):
