@@ -36,7 +36,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
                 """)
     
     
-    st.markdown(""" _Vous naviguez sur mobile ? Le menu se trouve au niveau de la flèche en haut en gauche_""") 
+    st.markdown(""" _Vous êtes sur mobile ? Le menu de navigation se trouve au niveau de la flèche en haut en gauche_""") 
     
     
 
