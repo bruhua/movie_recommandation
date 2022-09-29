@@ -26,27 +26,27 @@ PAGES = {
 
 
 # Fonction pour charger les données
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def load_data1():
     df_graph = pd.read_csv('https://raw.githubusercontent.com/bruhua/movie_recommandation/main/Dataframe/df_graph.csv')
     return df_graph
 
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def load_data2():
     final_film = pd.read_csv('https://raw.githubusercontent.com/bruhua/movie_recommandation/main/Dataframe/Final%20film.csv')
     return final_film
 
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def load_data3():
     df_exemple = pd.read_csv('https://raw.githubusercontent.com/bruhua/movie_recommandation/main/Dataframe/df_exemple.csv')
     return df_exemple
 
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def load_data4():
     df_overview = pd.read_csv('https://raw.githubusercontent.com/bruhua/movie_recommandation/main/Dataframe/df_overview.csv')
     return df_overview
 
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def load_data5():
     df_meta = pd.read_csv('https://raw.githubusercontent.com/bruhua/movie_recommandation/main/Dataframe/df_meta.csv')
     return df_meta
