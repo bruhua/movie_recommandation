@@ -5,6 +5,7 @@ import plotly.express as px
 import demographic_filtering
 import content_based_filtering
 import content_based_filtering_v2
+import presentation
 
 # Pages
 PAGES = {
