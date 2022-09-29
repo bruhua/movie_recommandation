@@ -91,13 +91,13 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
     # Fonction qui chercher les affiches des films recommandés
     def find_image(film):
-        try : 
-            url = 'https://www.themoviedb.org/search?language=en&query='
-            prefix_url = 'https://www.themoviedb.org'
-            name = df_meta.loc[df_meta['title'] == film]['title2'].values
-            final_url = url + name
-            page_LC = urlopen(final_url[0])
-            soup = BeautifulSoup(page_LC, 'html.parser')
+        url = 'https://www.themoviedb.org/search?language=en&query='
+        prefix_url = 'https://www.themoviedb.org'
+        name = df_meta.loc[df_meta['title'] == film]['title2'].values
+        final_url = url + name
+        page_LC = urlopen(final_url[0])
+        soup = BeautifulSoup(page_LC, 'html.parser')
+        try:
             # Récupération de l'affiche du film
             image_tags = soup.find_all('img', class_='poster')
             links = []
