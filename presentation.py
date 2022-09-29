@@ -38,8 +38,8 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
                 Réussir à construire un système de recommandation efficace et pertinent. 
                 Pour cela, 3 modèles sont proposés : 
                 - le modèle [Demographic Filtering](demographic_filtering) """)
-                if st.button("Demographic Filtering") : 
-                    PAGES.keys(3)
+    if st.button("Demographic Filtering") : 
+        PAGES.keys(3)
      st.markdown("""
                 - [Content based Filtering](content_based_filtering)
                 - [Content Based Filtering v2](content_based_filtering_v2)
