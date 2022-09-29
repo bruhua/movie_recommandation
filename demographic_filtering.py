@@ -97,4 +97,4 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
     st.markdown(""" Ce 1er système de recommandation est assez basique et surtout il ne propose aucune 
      personnalisation. Peu importe vos préférences ou votre historique de visionnage, il propose la même chose à tout le monde.""")
-    st.markdown(""" **Le prochain modèle [Content based filtering](content_based_filtering) devrait commencer à améliorer nos recommandations !** """)
+    st.markdown(""" **Le prochain modèle Content based filtering devrait commencer à améliorer nos recommandations !** """)
