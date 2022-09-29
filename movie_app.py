@@ -20,20 +20,20 @@ PAGES = {
 # Gestion des chemins
 
 # Récupération du dossier courant
-current_folder = os.path.dirname(__file__)
+#current_folder = os.path.dirname(__file__)
 # Récupération du dossier der données (dataset, images, ...)
-data_path = os.path.join(current_folder, "Dataframe")
+# data_path = os.path.join(current_folder, "Dataframe")
 
 
 # Fonction pour charger les données
 @st.cache(allow_output_mutation=True)
 def load_data1():
-    df = pd.read_csv(os.path.join(data_path , "df_filtre.csv"))
+    df = pd.read_csv('https://raw.githubusercontent.com/bruhua/movie_recommandation/main/Dataframe/df_filtre.csv')
     return df
 
 @st.cache(allow_output_mutation=True)
 def load_data2():
-    final_film = pd.read_csv(os.path.join(data_path, "Final film.csv"))
+    final_film = pd.read_csv('https://raw.githubusercontent.com/bruhua/movie_recommandation/main/Dataframe/Final%20film.csv')
     return final_film
 
 
