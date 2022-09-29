@@ -91,24 +91,27 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
     # Fonction qui chercher les affiches des films recommandés
     def find_image(film):
-        url = 'https://www.themoviedb.org/search?language=en&query='
-        prefix_url = 'https://www.themoviedb.org'
-        name = df_meta.loc[df_meta['title'] == film]['title2'].values
-        final_url = url + name
-        page_LC = urlopen(final_url[0])
-        soup = BeautifulSoup(page_LC, 'html.parser')
-        # Récupération de l'affiche du film
-        image_tags = soup.find_all('img', class_='poster')
-        links = []
-        for image_tag in image_tags:
-            links.append(image_tag['src'])
-        suffixe_url = links[0]
-        urllib.request.urlretrieve(prefix_url + suffixe_url, ".jpg")
-        # Affichage
-        dimensions = (5000, 2000)
-        i = Image.open('.jpg')
-        i.thumbnail(dimensions)
-        st.image(i,width=130  )
+        try : 
+            url = 'https://www.themoviedb.org/search?language=en&query='
+            prefix_url = 'https://www.themoviedb.org'
+            name = df_meta.loc[df_meta['title'] == film]['title2'].values
+            final_url = url + name
+            page_LC = urlopen(final_url[0])
+            soup = BeautifulSoup(page_LC, 'html.parser')
+            # Récupération de l'affiche du film
+            image_tags = soup.find_all('img', class_='poster')
+            links = []
+            for image_tag in image_tags:
+                links.append(image_tag['src'])
+            suffixe_url = links[0]
+            urllib.request.urlretrieve(prefix_url + suffixe_url, ".jpg")
+            # Affichage
+            dimensions = (5000, 2000)
+            i = Image.open('.jpg')
+            i.thumbnail(dimensions)
+            st.image(i,width=130  )
+        except IndexError:
+            print("le film {} n'a pas l'air d'avoir d'affiche disponible sur le site TMDB!")
 
     # Interactivité : calcul des recommandations + affichages des affiches
     listing_selectionnable3 = df_meta.sort_values(by='popularity', ascending=False).head(100)['title']
