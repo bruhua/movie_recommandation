@@ -120,7 +120,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
     if st.button('Montre-moi les recommandations !'):
         with st.spinner(text="Work in progress...") :
-            st.write("**Film choisi :** ", listing_selectionnable3)
+            st.write("**Film choisi :** ", film_selectionne)
             # find_image(film_selectionne)
 
             st.write("")
