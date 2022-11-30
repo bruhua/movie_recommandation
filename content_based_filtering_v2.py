@@ -120,8 +120,8 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
     if st.button('Montre-moi les recommandations !'):
         with st.spinner(text="Work in progress...") :
-            st.write("**Film choisi :** ")
-            find_image(film_selectionne)
+            st.write("**Film choisi :** ", listing_selectionnable3)
+            # find_image(film_selectionne)
 
             st.write("")
             st.write("**Les films recommandés :** ")
@@ -141,25 +141,25 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
             with col1 :
                 st.write(title1, "- Taux de recommandation :", get_recommandations2(film_selectionne, cosine_sim2).head(1)['% de reco'].values[0])
-                find_image(title1)
+                # find_image(title1)
 
                 st.write(title4, "- Taux de recommandation :", get_recommandations2(film_selectionne, cosine_sim2).loc[get_recommandations2(film_selectionne, cosine_sim2)['title']==title4]['% de reco'].values[0])
-                find_image(title4)
+                # find_image(title4)
 
             with col2 :
                 st.write(title2, "- Taux de recommandation :", get_recommandations2(film_selectionne, cosine_sim2).loc[get_recommandations2(film_selectionne, cosine_sim2)['title']==title2]['% de reco'].values[0])
-                find_image(title2)
+                # find_image(title2)
 
                 st.write(title5, "- Taux de recommandation :", get_recommandations2(film_selectionne, cosine_sim2).loc[get_recommandations2(film_selectionne, cosine_sim2)['title']==title5]['% de reco'].values[0])
-                find_image(title5)
+                # find_image(title5)
 
 
             with col3 :
                 st.write(title3, "- Taux de recommandation :", get_recommandations2(film_selectionne, cosine_sim2).loc[get_recommandations2(film_selectionne, cosine_sim2)['title']==title3]['% de reco'].values[0])
-                find_image(title3)
+                # find_image(title3)
 
                 st.write(title6, "- Taux de recommandation :", get_recommandations2(film_selectionne, cosine_sim2).loc[get_recommandations2(film_selectionne, cosine_sim2)['title']==title6]['% de reco'].values[0])
-                find_image(title6)
+                # find_image(title6)
         st.success('Done!')
 
 
