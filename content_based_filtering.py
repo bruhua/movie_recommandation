@@ -100,9 +100,10 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
         final_url = url + name
         
         ## MAJ de la fonction car le site tmdb renvoyait une error 403 - Compris qu'il ne s'agissait pas d'un navigateur
+        # MAJ 2025 : plus besoin
         # req = Request( url=final_url[0], headers={'User-Agent': 'Mozilla/5.0'} )    
-    
         #page_LC = urlopen(req, timeout=30).read()
+        
         page_LC = urlopen(final_url[0])
         soup = BeautifulSoup(page_LC, 'html.parser')
         try:
@@ -147,25 +148,25 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
             with col1 :
                 st.write(title1, "- Taux de recommandation :", get_recommandations(film_selectionne, cosine_sim).head(1)['% de reco'].values[0])
-                #find_image(title1)
+                find_image(title1)
 
                 st.write(title4, "- Taux de recommandation :", get_recommandations(film_selectionne, cosine_sim).loc[get_recommandations(film_selectionne, cosine_sim)['title']==title4]['% de reco'].values[0])
-                #find_image(title4)
+                find_image(title4)
 
             with col2 :
                 st.write(title2, "- Taux de recommandation :", get_recommandations(film_selectionne, cosine_sim).loc[get_recommandations(film_selectionne, cosine_sim)['title']==title2]['% de reco'].values[0])
-                #find_image(title2)
+                find_image(title2)
 
                 st.write(title5, "- Taux de recommandation :", get_recommandations(film_selectionne, cosine_sim).loc[get_recommandations(film_selectionne, cosine_sim)['title']==title5]['% de reco'].values[0])
-                #find_image(title5)
+                find_image(title5)
 
 
             with col3 :
                 st.write(title3, "- Taux de recommandation :", get_recommandations(film_selectionne, cosine_sim).loc[get_recommandations(film_selectionne, cosine_sim)['title']==title3]['% de reco'].values[0])
-                #find_image(title3)
+                find_image(title3)
 
                 st.write(title6, "- Taux de recommandation :", get_recommandations(film_selectionne, cosine_sim).loc[get_recommandations(film_selectionne, cosine_sim)['title']==title6]['% de reco'].values[0])
-                #find_image(title6)
+                find_image(title6)
         st.success('Done!')
 
     st.subheader("Est-ce que ça fonctionne ? ")
