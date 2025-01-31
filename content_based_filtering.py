@@ -100,9 +100,10 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
         final_url = url + name
         
         ## MAJ de la fonction car le site tmdb renvoyait une error 403 - Compris qu'il ne s'agissait pas d'un navigateur
-        req = Request( url=final_url[0], headers={'User-Agent': 'Mozilla/5.0'} )    
+        # req = Request( url=final_url[0], headers={'User-Agent': 'Mozilla/5.0'} )    
     
-        page_LC = urlopen(req, timeout=30).read()
+        #page_LC = urlopen(req, timeout=30).read()
+        page_LC = urlopen(final_url[0])
         soup = BeautifulSoup(page_LC, 'html.parser')
         try:
             # Récupération de l'affiche du film
