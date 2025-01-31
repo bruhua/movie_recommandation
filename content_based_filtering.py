@@ -130,7 +130,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
 
         with st.spinner(text="Work in progress...") :
             st.write("**Film choisi :** ",film_selectionne)
-            #find_image(film_selectionne)
+            find_image(film_selectionne)
 
             st.write("")
             st.write("**Les films recommandés :** ")
