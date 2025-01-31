@@ -104,7 +104,7 @@ def app(df_graph, final_film, df_exemple,df_overview,df_meta):
             for image_tag in image_tags:
                 links.append(image_tag['src'])
             suffixe_url = links[0]
-            urllib.request.urlretrieve(prefix_url + suffixe_url, ".jpg")
+            urllib.request.urlretrieve(suffixe_url, ".jpg")
             # Affichage
             dimensions = (5000, 2000)
             i = Image.open('.jpg')
